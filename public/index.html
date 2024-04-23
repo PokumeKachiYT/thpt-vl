@@ -1,134 +1,15 @@
-﻿<!DOCTYPE html>
-<html lang='en'>
-<head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 300vh;
-      margin: 0;
-      background-color: #303446;
-      overflow-x: hidden;
-    }
-
-    .vertical {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      width: 95vw;
-      height: auto;
-      border: 1px solid #51576d;
-      border-radius: 10px;
-      color: #c6d0f5;
-      background-color: #232634;
-      overflow: hidden;
-    }
-
-    .vertical > .headings {
-      text-align: center;
-      text-shadow: #232634;
-      text-anchor: middle;
-      text-wrap: pretty;
-      text-align-last: center;
-      font-family: monospace;
-      font-size: 35px;
-      margin: 30px 30px;
-      padding: 5px;
-      width: 90vw;
-      height: auto;
-      border: 2px solid #51676d;
-      border-radius: 10px;
-      color: #c6d0f5;
-      background-color: #20252f;
-    }
-
-    .vertical > .text_box {
-      text-align: left;
-      text-shadow: #232634;
-      text-wrap: pretty;
-      text-align-last: left;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 25px;
-      margin: 30px 30px;
-      padding: 5px;
-      width: 90vw;
-      height: auto;
-      border: 2px solid #61576d;
-      border-radius: 10px;
-      color: #c6d0f5;
-      background-color: #251f2f;
-    }
-  </style>
-  <title>Trường THPT Vĩnh Linh</title>
-</head>
-<body>
-  <div class='vertical' animating=false appeared=true>
-    <div class='headings'>
-      <p>Chào mừng các bạn đến với phiên bản thử nghiệm của website (chưa) chính thức của trường <b>THPT Vĩnh Linh</b></p>
-    </div>
-
-    <div class='text_box'>
-      Đối với các bạn trẻ còn ngồi trên ghế nhà trường ngày nay, mạng Internet vừa là một công cụ giải trí bổ ích, vừa là một thế giới với vô vàn nền tảng nơi các bạn có thể giao lưu và trao đổi kiến thức với nhau.
-    </div>
-
-    <script>
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          let element = entry.target;
-          if (!element.classList.contains('vertical')) return;
-
-          const initialStyles = window.getComputedStyle(element);
-
-          if (entry.isIntersecting && element.getAttribute('appeared') !== 'true') {
-            element.setAttribute('appeared', 'true');
-
-            // the element comes into view
-            element.animate(
-              [
-                { opacity: initialStyles.opacity, transform: initialStyles.transform },
-                { opacity: 1, transform: 'translateX(0)' },
-              ],
-              {
-                duration: 500,
-                easing: 'cubic-bezier(0, 0, 0, 1)',
-                fill: 'forwards',
-              }
-            );
-          }
-
-          if (!entry.isIntersecting && element.getAttribute('appeared') === 'true') {
-            element.setAttribute('appeared', 'false');
-
-            // the element goes out of view
-            element.animate(
-              [
-                { opacity: initialStyles.opacity, transform: initialStyles.transform },
-                { opacity: 0, transform: 'translateX(10vw)' },
-              ],
-              {
-                duration: 500,
-                easing: 'cubic-bezier(0, 1, 0, 1)',
-                fill: 'forwards',
-              }
-            );
-          }
-        });
-      }, { threshold: 0.5 });
-
-      // Select all elements with the 'vertical' class
-      const elements = document.querySelectorAll('.vertical');
-
-      // Observe each element
-      elements.forEach(element => {
-        observer.observe(element);
-      });
-
-    </script>
-  </div>
-</body>
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="0; url=https://thpt-vl.web.app/home/">
+        <script type="text/javascript">
+            window.location.href = "https://thpt-vl.web.app/home/"
+        </script>
+        <title>Page Redirection</title>
+    </head>
+    <body>
+        <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
+        If you are not redirected automatically, click on this <a href='https://thpt-vl.web.app/home/'>Redirect</a>.
+    </body>
 </html>
