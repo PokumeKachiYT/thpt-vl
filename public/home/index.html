@@ -1,134 +1,54 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
+
 <head>
+
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 300vh;
-      margin: 0;
-      background-color: #303446;
-      overflow-x: hidden;
-    }
+  <link rel="stylesheet" href="style.css">
 
-    .vertical {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      width: 95vw;
-      height: auto;
-      border: 1px solid #51576d;
-      border-radius: 10px;
-      color: #c6d0f5;
-      background-color: #232634;
-      overflow: hidden;
-    }
+  <!-- Importing fonts -->
 
-    .vertical > .headings {
-      text-align: center;
-      text-shadow: #232634;
-      text-anchor: middle;
-      text-wrap: pretty;
-      text-align-last: center;
-      font-family: monospace;
-      font-size: 35px;
-      margin: 30px 30px;
-      padding: 5px;
-      width: 90vw;
-      height: auto;
-      border: 2px solid #51676d;
-      border-radius: 10px;
-      color: #c6d0f5;
-      background-color: #20252f;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
-    .vertical > .text_box {
-      text-align: left;
-      text-shadow: #232634;
-      text-wrap: pretty;
-      text-align-last: left;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 25px;
-      margin: 30px 30px;
-      padding: 5px;
-      width: 90vw;
-      height: auto;
-      border: 2px solid #61576d;
-      border-radius: 10px;
-      color: #c6d0f5;
-      background-color: #251f2f;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
   <title>Trường THPT Vĩnh Linh</title>
+
 </head>
+
 <body>
-  <div class='vertical' animating=false appeared=true>
-    <div class='headings'>
-      <p>Chào mừng các bạn đến với phiên bản thử nghiệm của website (chưa) chính thức của trường <b>THPT Vĩnh Linh</b></p>
+
+  <div class='vertical'>
+
+    <div class='header'>
+      <p>
+        Chào mừng các bạn đến với website (chưa) chính thức
+        của trường <br/> <i>THPT Vĩnh Linh</i>
+      </p>
     </div>
 
-    <div class='text_box'>
-      Đối với các bạn trẻ còn ngồi trên ghế nhà trường ngày nay, mạng Internet vừa là một công cụ giải trí bổ ích, vừa là một thế giới với vô vàn nền tảng nơi các bạn có thể giao lưu và trao đổi kiến thức với nhau.
+    <div class='text'>
+      Đối với các bạn trẻ còn ngồi trên ghế nhà trường ngày nay, mạng Internet vừa là một công cụ giải trí bổ ích,
+      vừa là một thế giới với vô vàn các nền tảng mạng xã hội, nơi mà các bạn có thể giao lưu và trao đổi kiến thức cùng với nhau.
     </div>
 
-    <script>
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          let element = entry.target;
-          if (!element.classList.contains('vertical')) return;
+    <div class='text'>
+      Vì vậy
+    </div>
 
-          const initialStyles = window.getComputedStyle(element);
+    <script src="src.js"></script>
 
-          if (entry.isIntersecting && element.getAttribute('appeared') !== 'true') {
-            element.setAttribute('appeared', 'true');
-
-            // the element comes into view
-            element.animate(
-              [
-                { opacity: initialStyles.opacity, transform: initialStyles.transform },
-                { opacity: 1, transform: 'translateX(0)' },
-              ],
-              {
-                duration: 500,
-                easing: 'cubic-bezier(0, 0, 0, 1)',
-                fill: 'forwards',
-              }
-            );
-          }
-
-          if (!entry.isIntersecting && element.getAttribute('appeared') === 'true') {
-            element.setAttribute('appeared', 'false');
-
-            // the element goes out of view
-            element.animate(
-              [
-                { opacity: initialStyles.opacity, transform: initialStyles.transform },
-                { opacity: 0, transform: 'translateX(10vw)' },
-              ],
-              {
-                duration: 500,
-                easing: 'cubic-bezier(0, 1, 0, 1)',
-                fill: 'forwards',
-              }
-            );
-          }
-        });
-      }, { threshold: 0.5 });
-
-      // Select all elements with the 'vertical' class
-      const elements = document.querySelectorAll('.vertical');
-
-      // Observe each element
-      elements.forEach(element => {
-        observer.observe(element);
-      });
-
-    </script>
   </div>
+
 </body>
+
 </html>
