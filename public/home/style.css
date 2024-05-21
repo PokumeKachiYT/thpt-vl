@@ -3,7 +3,8 @@ body {
   justify-content: center;
   align-items: center;
 
-  height: 350vh;
+  max-height: 100%;
+
   margin: 0;
 
   background-color: #303446;
@@ -17,8 +18,8 @@ body {
   align-items: center;
   text-align: center;
 
-  width: 95vw;
-  height: auto;
+  max-width: 100%;
+  max-height: 100%;
 
   border: 0px solid #51576d;
   border-radius: 10px;
@@ -34,14 +35,14 @@ body {
   text-align-last: center;
 
   font-family: "Roboto", sans-serif;
-  font-size: 5vh;
+  font-size: 300%;
   font-weight: bold;
   font-style: normal;
 
-  margin-bottom: 50vh;
-  padding: 2vh;
-  width: 80vw;
-  height: auto;
+  margin-top: 5%;
+  margin-bottom: 50%;
+  padding: 2%;
+  max-width: 80%;
   
   color: #c6d0f5;
   background-color: #232634;
@@ -56,14 +57,13 @@ body {
   text-align-last: left;
 
   font-family: "Roboto", sans-serif;
-  font-size: 2.75vh;
+  font-size: 200%;
   font-weight: light;
   font-style: normal;
 
-  margin-bottom: 10vh;
-  padding: 2vh;
-  width: 85vw;
-  height: auto;
+  margin-bottom: 10%;
+  padding: 2%;
+  max-width: 85%;
 
   color: #c6d0f5;
   background-color: #251f2f;
@@ -78,14 +78,13 @@ body {
   text-align-last: center;
 
   font-family: "Libre Franklin", sans-serif;
-  font-size: 2.5vh;
+  font-size: 150%;
   font-weight: normal;
   font-style: normal;
 
-  margin-bottom: 3vh;
-  padding: 5vh;
-  width: 85vw;
-  height: auto;
+  margin-bottom: 3%;
+  padding: 2%;
+  max-width: 85%;
 
   color: #c6d0f5;
   background-color: #453f4f;
@@ -100,17 +99,17 @@ body {
   text-align-last: right;
 
   font-family: "Libre Franklin", sans-serif;
-  font-size: 3vh;
+  font-size: 150%;
   font-weight: normal;
   font-style: normal;
 
-  margin-top: 10vh;
-  padding: 3vh;
-  width: 85vw;
-  height: auto;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  padding: 3%;
+  max-width: 85%;
 
   color: #c6d0f5;
-  background-color: #151f2f;
-  border: 1px solid #354f7f;
+  background-color: #353f4f;
+  border: 1px solid #455f8f;
   border-radius: 10px;
 }
