@@ -8,34 +8,38 @@ const settings = [
   },
   {
     'id': 'intro',
-    'start': 25,
-    'stop': 55,
+    'start': 30,
+    'stop': 60,
   },
   {
     'id': 'body1',
-    'start': 45,
-    'stop': 75,
+    'start': 40,
+    'stop': 70,
   },
   {
     'id': 'donation',
-    'start': 70,
-    'stop': 90,
+    'start': 50,
+    'stop': 80,
   },
   {
     'id': 'outro',
-    'start': 85,
-    'stop': 115,
+    'start': 75,
+    'stop': 125,
   },
   {
     'id': 'signature',
-    'start': 90,
-    'stop': 110,
+    'start': 85,
+    'stop': 115,
   },
 ];
 
 function getScrollPercentage( elm ){
-  var p = document.body.parentNode;
-  return (document.body.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight ) * 100;
+  var h = document.documentElement, 
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight';
+  
+    return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
 }
 
 const onScroll = () => {
@@ -44,13 +48,17 @@ const onScroll = () => {
   for (const info of settings) {
     const element = document.getElementById(info.id);
 
-    if (element != null) {  
-      if (scrollPercentage < info.start || scrollPercentage > info.stop) {
-        element.style.opacity = 0;
+    if (element != null) {
+      if (info.id == 'outro' || info.id == 'signature') {
+        element.style.opacity = 1;
       } else {
-        const mid = (info.stop + info.start) / 2;
+        if (scrollPercentage < info.start || scrollPercentage > info.stop) {
+          element.style.opacity = 0;
+        } else {
+          const mid = (info.stop + info.start) / 2;
 
-        element.style.opacity = 1 - Math.abs(mid - scrollPercentage) / (info.stop - info.start) * 2;
+          element.style.opacity = 1 - Math.abs(mid - scrollPercentage) / (info.stop - info.start) * 2;
+        }
       }
     }
   }
