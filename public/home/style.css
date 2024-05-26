@@ -48,6 +48,8 @@ body {
   background-color: #232634;
   border: 2px solid #636684;
   border-radius: 10px;
+
+  opacity: 0
 }
 
 .vertical > .text {
@@ -69,6 +71,8 @@ body {
   background-color: #251f2f;
   border: 1px solid #553f5f;
   border-radius: 10px;
+
+  opacity: 0
 }
 
 .vertical > .donation {
@@ -90,6 +94,8 @@ body {
   background-color: #453f4f;
   border: 1px solid #755f7f;
   border-radius: 10px;
+
+  opacity: 0
 }
 
 .vertical > .signature {
@@ -103,8 +109,8 @@ body {
   font-weight: normal;
   font-style: normal;
 
-  margin-top: 10%;
-  margin-bottom: 5%;
+  margin-top: 2%;
+  margin-bottom: 10%;
   padding: 3%;
   max-width: 85%;
 
@@ -112,4 +118,6 @@ body {
   background-color: #353f4f;
   border: 1px solid #455f8f;
   border-radius: 10px;
+
+  opacity: 0
 }
