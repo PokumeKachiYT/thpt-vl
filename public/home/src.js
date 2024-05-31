@@ -18,7 +18,7 @@ const settings = [
   },
   {
     'id': 'donation',
-    'start': 50,
+    'start': 55,
     'stop': 80,
   },
   {

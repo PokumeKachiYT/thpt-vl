@@ -1,3 +1,16 @@
+/*
+
+nyanza: #E7FEE6ff;
+light-green: #74DA7Dff;
+pigment-green: #349C35ff;
+forest-green: #399635ff;
+coral-pink: #FF8A83ff;
+sandy-brown: #FFB166ff;
+picton-blue: #01AEFFff;
+goldenrod: #D7A401ff;
+
+*/
+
 body {
   display: flex;
   justify-content: center;
@@ -7,7 +20,7 @@ body {
 
   margin: 0;
 
-  background-color: #303446;
+  background-color: rgba(100,150,100);
   overflow-x: hidden;
 }
 
@@ -21,10 +34,7 @@ body {
   max-width: 100%;
   max-height: 100%;
 
-  border: 0px solid #51576d;
   border-radius: 10px;
-  color: #c6d0f5;
-  background-color: rgba(0, 0, 0, 0);
   overflow: hidden;
 }
 
@@ -44,9 +54,9 @@ body {
   padding: 2%;
   max-width: 80%;
   
-  color: #c6d0f5;
-  background-color: #232634;
-  border: 2px solid #636684;
+  color: #E7FEE6ff;
+  background-color: #399635ff;
+  border: 2px solid #E7FEE6ff;
   border-radius: 10px;
 
   opacity: 0
@@ -67,9 +77,9 @@ body {
   padding: 2%;
   max-width: 85%;
 
-  color: #c6d0f5;
-  background-color: #251f2f;
-  border: 1px solid #553f5f;
+  color: #E7FEE6ff;
+  background-color: #399635ff;
+  border: 1px solid #E7FEE6ff;
   border-radius: 10px;
 
   opacity: 0
@@ -90,9 +100,9 @@ body {
   padding: 2%;
   max-width: 85%;
 
-  color: #c6d0f5;
-  background-color: #453f4f;
-  border: 1px solid #755f7f;
+  color: #E7FEE6ff;
+  background: radial-gradient(circle, rgba(29,154,42,1) 0%, rgba(29,106,50,1) 100%);
+  border: 1px solid rgb(177, 255, 158);
   border-radius: 10px;
 
   opacity: 0
@@ -114,10 +124,17 @@ body {
   padding: 3%;
   max-width: 85%;
 
-  color: #c6d0f5;
-  background-color: #353f4f;
-  border: 1px solid #455f8f;
+  color: rgb(200, 255, 150);
+  background: radial-gradient(circle, rgba(60,160,53,1) 0%, rgba(67,184,68,1) 100%);
+  border: 1px solid rgb(255, 215, 86);
   border-radius: 10px;
 
   opacity: 0
+}
+
+#tree {
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
